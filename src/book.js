@@ -9,10 +9,14 @@ function buildMainCharacter(name, age, pronouns){
   }
   return character
 }
-function saveReview(reviews) {
-  var newReview = []
-  return newReview
+function saveReview(addReviews, array) {
+ if (array.includes(addReviews) === false) {
+    return array.push(addReviews)
+  // } else {
+    // return array
+  }
 }
+
 module.exports = {
   createTitle,
   buildMainCharacter,
