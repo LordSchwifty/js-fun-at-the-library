@@ -1,8 +1,7 @@
-function shelfBook(books, sciFiShelf) {
-  if (books.genre === books.genre.sciFi) {
-    books.push(sciFiShelf)
+function shelfBook(book, shelf) {
+  if (book.genre === 'sciFi' && shelf.length <= 2) {
+    return shelf.unshift(book)
   }
-  return sciFiShelf
 }
 module.exports = {
   shelfBook,
