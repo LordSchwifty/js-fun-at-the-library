@@ -3,9 +3,31 @@ function shelfBook(book, shelf) {
     return shelf.unshift(book)
   }
 }
+function unshelfBook(book, shelf) { 
+  for (var i = 0; i < shelf.length; i++) {
+    if (shelf[i].title === book)
+  return shelf.splice(i, 1)
+}
+}
+function listTitles(shelf) {
+ var titles = []
+  for (var i = 0; i < shelf.length; i++) {
+  titles.push(shelf[i].title)
+}
+ return titles.join(', ')
+}  
+ 
+function searchShelf(book, shelf) {
+  for (var i = 0; i < shelf.length; i++)
+  if (shelf[i].includes(book) === true) {
+    return true
+  } else if (shelf[i].includes(book) === false) {
+    return false
+  }
+}
 module.exports = {
   shelfBook,
-  // unshelfBook,
-  // listTitles,
-  // searchShelf
+  unshelfBook,
+  listTitles,
+  searchShelf
 };
