@@ -17,13 +17,12 @@ function listTitles(shelf) {
  return titles.join(', ')
 }  
  
-function searchShelf(book, shelf) {
-  for (var i = 0; i < shelf.length; i++)
-  if (shelf[i].includes(book) === true) {
+function searchShelf(shelf, book) {
+  for (var i = 0; i < shelf.length; i++) {
+  if (shelf[i].title === book) {
     return true
-  } else if (shelf[i].includes(book) === false) {
-    return false
-  }
+  } 
+  } return false
 }
 module.exports = {
   shelfBook,
