@@ -9,10 +9,10 @@ function createLibrary(library) {
 function addBook(library, book) {
   library.shelves[book.genre].push(book)
 }
-function checkoutBook(library, book, shelves) { 
-  for (var i = 0; i < shelves.length; i++) {
-    if (shelves[i] === book) {
-    library.shelves[i].splice(i, 1)
+function checkoutBook(library, book, genre) { 
+  for (var i = 0; i < library.shelves[genre].length; i++) {
+    if (library.shelves[genre][i] === book) {
+    library.shelves[genre].splice(library.shelves[book][i], 1)
 }
 }
  return `You have now checked out ${book} from the ${library}`
